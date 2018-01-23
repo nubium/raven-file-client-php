@@ -1,0 +1,4 @@
+parameters:
+	ignoreErrors:
+		- '#Call to an undefined method object::__toString().#'
+		- '#Method Raven_Client::captureException\(\) invoked with 5 parameters, 1-4 required.#'

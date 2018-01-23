@@ -1,0 +1,33 @@
+{
+    "name": "nubium/raven-file-client-php",
+    "description": "Raven client saves all records to file instead of sending it to sentry directly. Python sender is required to push those records to sentry.",
+    "type": "library",
+    "require": {
+        "sentry/sentry": "~1.8.0",
+        "psr/log": "~1.0.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.5.0",
+        "phpstan/phpstan": "~0.9",
+        "jakub-onderka/php-parallel-lint": "~0.9",
+        "mikey179/vfsStream": "~1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nubium\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Nubium\\Tests\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jiri Travnicek",
+            "email": "jiri.travnicek@nubium.cz"
+        }
+    ],
+    "minimum-stability": "stable"
+}

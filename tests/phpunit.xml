@@ -1,0 +1,14 @@
+<phpunit backupGlobals="false"
+		 color="true"
+         backupStaticAttributes="false"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         bootstrap="../vendor/autoload.php"
+>
+	<testsuites>
+	    <testsuite name="Logger Test Suite">
+	        <directory>./test/</directory>
+	    </testsuite>
+	</testsuites>
+</phpunit>

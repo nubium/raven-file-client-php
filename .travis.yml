@@ -1,0 +1,31 @@
+language: php
+php:
+    - 7.0
+    - 7.1
+    - 7.2
+
+before_install:
+    # turn off XDebug
+    - phpenv config-rm xdebug.ini || return 0
+
+install:
+    - travis_retry composer install --no-progress --prefer-dist
+
+script:
+  # check syntax errors
+  - vendor/bin/parallel-lint -j 10 --blame . --exclude vendor/
+
+  # code analysis
+  - vendor/bin/phpstan analyze src/ -c phpstan.neon -l 7
+
+  # run tests
+  - vendor/bin/phpunit -c tests/phpunit.xml tests/
+
+sudo: false
+
+cache:
+    directories:
+        - $HOME/.composer/cache
+
+notifications:
+    email: false
